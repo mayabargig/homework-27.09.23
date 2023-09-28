@@ -35,12 +35,14 @@ function displayWeatherForecast(data) {
         const date = new Date(forecast.dt * 1000);
         const temperature = (forecast.main.temp - 273.15).toFixed(2);
         const description = forecast.weather[0].description;
+        const iconUrl = "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png";
 
         const forecastHtml = `
             <div>
                 <h4>Date: ${date.toDateString()}</h4>
                 <p>Temperature: ${temperature}°C</p>
                 <p>Description: ${description}</p>
+                <img src="${iconUrl}"/>
             </div>
             <br>
         `;
